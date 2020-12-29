@@ -7,8 +7,13 @@ import { GrCart as CartIcon } from 'react-icons/gr';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <header>
+        <h1>
+          Fast Movie Search
+        </h1>
+      </header>
       <Search />
+      <Navigation />
     </div>
   );
 }
@@ -16,19 +21,17 @@ function App() {
 
 export default App;
 
-const Header = () => {
+const Navigation = () => {
   return (
-    <header className='Header'>
-      <nav>
-        <ul>
-          <li>
-            <SearchIcon />
-          </li>
-          <li>
-            <CartIcon />
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav className='Navigation'>
+      <ul>
+        <li>
+          <SearchIcon />
+        </li>
+        <li>
+          <CartIcon />
+        </li>
+      </ul>
+    </nav>
   );
 }

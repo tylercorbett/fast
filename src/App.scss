@@ -1,16 +1,28 @@
 .App {
   font-family: Roboto, sans-serif;
+
+  header {
+    padding: .2rem 0;
+    border-bottom: 2px solid rgb(219, 219, 219);
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
 }
 
-.Header {
-  font-size: 1.3rem;
+.Navigation {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  font-size: 1.9rem;
   font-weight: 300;
+  padding: .6rem 0;
+  border-top: 2px solid rgb(219, 219, 219);
 
-  nav {
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-    }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }
