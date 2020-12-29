@@ -22,14 +22,10 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a>
-              <SearchIcon />
-            </a>
+            <SearchIcon />
           </li>
           <li>
-            <a>
-              <CartIcon />
-            </a>
+            <CartIcon />
           </li>
         </ul>
       </nav>
