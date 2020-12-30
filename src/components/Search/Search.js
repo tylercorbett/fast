@@ -11,6 +11,7 @@ const Search = () => {
         type='text'
         placeholder='Harry Potter'
         onChange={e => setMovieName(e.target.value)}
+        maxLength={40}
       />
 
     </section>
