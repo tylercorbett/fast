@@ -19,7 +19,9 @@ const Search = () => {
       />
       <button
         onClick={handleSearchClicked}
-      >Search</button>
+      >
+        Search
+      </button>
     </section>
   );
 };
