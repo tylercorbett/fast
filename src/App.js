@@ -12,8 +12,8 @@ const App = () => {
           Fast Movie Search
         </h1>
       </header>
-      <Search />
       <Navigation />
+      <Search />
     </div>
   );
 }

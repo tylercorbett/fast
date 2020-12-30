@@ -4,7 +4,7 @@ import { getApiKey } from '../../utils/helpers';
 import { AiOutlineLoading3Quarters as LoadingSpinner } from 'react-icons/ai';
 
 const Search = () => {
-  const [movieName, setMovieName] = useState('');
+  const [movieName, setMovieName] = useState('Harry Potter');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const Search = () => {
   // TODO: Move this into it's own file
   const handleSearchClicked = async e => {
     e.preventDefault();
-    
+
     setIsLoading(true);
     const res = await fetch(`http://www.omdbapi.com/?apikey=${getApiKey()}&s=${movieName}`);
     console.log(res, 'res');
@@ -68,6 +68,7 @@ const Search = () => {
 
 export default Search;
 
+// TODO: Move ResultsDisplay and Result into their own file
 const ResultsDisplay = ({ searchResults, isLoading, error }) => {
 
   if (isLoading) return <LoadingSpinner className='spinner rotating'/>;
@@ -75,8 +76,19 @@ const ResultsDisplay = ({ searchResults, isLoading, error }) => {
   if (error) return <p className='error'>{error}</p>;
 
   return (
-    <section className='ResultsDisplay'>
-      
-    </section>
+    <div className='ResultsDisplay'>
+      <ul>
+        {searchResults.map(result => <Result key={result.imdbID} result={result}/>)}
+      </ul>
+    </div>
+  );
+};
+
+const Result = ({ result }) => {
+  return (
+    <li className='Result'>
+      <img src={result.Poster} />
+      <h3>{result.Title}</h3>
+    </li>
   );
 };
