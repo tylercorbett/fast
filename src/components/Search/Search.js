@@ -82,7 +82,7 @@ const ResultsDisplay = ({ searchResults, isLoading, error }) => {
 const Result = ({ result }) => {
   return (
     <li className='Result'>
-      <img src={result.Poster} />
+      <img src={result.Poster} alt={`${result.Title} poster image`}/>
       <h3>{result.Title}</h3>
     </li>
   );
