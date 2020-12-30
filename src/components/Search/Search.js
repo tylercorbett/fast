@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Search.scss';
 import { getApiKey } from '../../utils/helpers';
+import { AiOutlineLoading3Quarters as LoadingSpinner } from 'react-icons/ai';
 
 const Search = () => {
   const [movieName, setMovieName] = useState('');
@@ -24,7 +25,7 @@ const Search = () => {
         setSearchResults(json.Search);
       }
       else {
-        setError(json.Error)
+        setError(json.Error);
       }
     }
 
@@ -52,6 +53,8 @@ const Search = () => {
       </button>
       <ResultsDisplay 
         searchResults={searchResults}
+        isLoading={isLoading}
+        error={error}
       />
     </section>
   );
@@ -59,7 +62,10 @@ const Search = () => {
 
 export default Search;
 
-const ResultsDisplay = ({ searchResults }) => {
+const ResultsDisplay = ({ searchResults, isLoading, error }) => {
+
+  if (isLoading) return <LoadingSpinner className='spinner rotating'/>;
+  
   return (
     <section className='ResultsDisplay'>
       
