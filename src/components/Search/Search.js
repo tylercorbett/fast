@@ -4,7 +4,7 @@ import { getApiKey } from '../../utils/helpers';
 import { AiOutlineLoading3Quarters as LoadingSpinner } from 'react-icons/ai';
 
 const Search = () => {
-  const [movieName, setMovieName] = useState('Harry Potter');
+  const [movieName, setMovieName] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
