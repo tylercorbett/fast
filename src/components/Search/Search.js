@@ -91,7 +91,7 @@ const ResultsDisplay = ({ searchResults, isLoading, error, handleResultClick, se
 const Result = ({ result, handleResultClick, isActive }) => {
   return (
     <li className={`Result${isActive ? ' active' : ''}`} onClick={() => handleResultClick(result)}>
-      <img src={result.Poster} alt={`${result.Title} poster image`}/>
+      <img src={result.Poster} alt={`${result.Title} poster`}/>
       <h3>{result.Title}</h3>
     </li>
   );
