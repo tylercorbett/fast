@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './reset.css';
 import './App.scss';
 import Search from './components/Search/Search';
@@ -5,6 +6,20 @@ import { FiSearch as SearchIcon } from 'react-icons/fi';
 import { GrCart as CartIcon } from 'react-icons/gr';
 
 const App = () => {
+  const [selectedMovies, setSelectedMovies] = useState([]);
+
+  const updateSelectedMovies = newMovie => {
+    let newMovies = [...selectedMovies];
+    
+    if (newMovies.includes(newMovie)) {
+      newMovies = newMovies.filter(movie => movie !== newMovie);
+    }
+    else {
+      newMovies.push(newMovie);
+    }
+
+    setSelectedMovies(newMovies);
+  };
   return (
     <div className="App">
       <header>
@@ -13,7 +28,9 @@ const App = () => {
         </h1>
       </header>
       <Navigation />
-      <Search />
+      <Search 
+        updateSelectedMovies={updateSelectedMovies}
+      />
     </div>
   );
 }

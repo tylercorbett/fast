@@ -3,11 +3,17 @@ import './Search.scss';
 import { getApiKey } from '../../utils/helpers';
 import { AiOutlineLoading3Quarters as LoadingSpinner } from 'react-icons/ai';
 
-const Search = () => {
+const Search = ({ updateSelectedMovies }) => {
   const [movieName, setMovieName] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const handleResultClick = result => {
+    const { Title } = result;
+
+    updateSelectedMovies(Title);
+  }
 
   // TODO: Move this into it's own file
   const handleSearchClicked = async e => {
@@ -56,6 +62,7 @@ const Search = () => {
         searchResults={searchResults}
         isLoading={isLoading}
         error={error}
+        handleResultClick={handleResultClick}
       />
     </section>
   );
@@ -64,7 +71,7 @@ const Search = () => {
 export default Search;
 
 // TODO: Move ResultsDisplay and Result into their own file
-const ResultsDisplay = ({ searchResults, isLoading, error }) => {
+const ResultsDisplay = ({ searchResults, isLoading, error, handleResultClick }) => {
 
   if (isLoading) return <LoadingSpinner className='spinner rotating'/>;
 
@@ -73,15 +80,15 @@ const ResultsDisplay = ({ searchResults, isLoading, error }) => {
   return (
     <div className='ResultsDisplay'>
       <ul>
-        {searchResults.map(result => <Result key={result.imdbID} result={result}/>)}
+        {searchResults.map(result => <Result handleResultClick={handleResultClick} key={result.imdbID} result={result}/>)}
       </ul>
     </div>
   );
 };
 
-const Result = ({ result }) => {
+const Result = ({ result, handleResultClick }) => {
   return (
-    <li className='Result'>
+    <li className='Result' onClick={() => handleResultClick(result)}>
       <img src={result.Poster} alt={`${result.Title} poster image`}/>
       <h3>{result.Title}</h3>
     </li>
