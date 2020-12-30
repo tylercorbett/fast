@@ -35,11 +35,6 @@ const Search = () => {
     setIsLoading(false);    
   };
   
-  // console.log(movieName, 'movieName');
-  // console.log(searchResults, 'searchResults');
-  // console.log(isLoading, 'isLoading');
-  // console.log(error, 'error');
-  
   return (
     <section className='Search'>
       <form>
