@@ -33,12 +33,20 @@
       cursor: pointer;
     }
   }
+
+  .error {
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .ResultsDisplay {
+
+  }
 }
 
-.ResultsDisplay {
-
-
-}
 
 // TODO: Move spinner into shared component library
 // https://stackoverflow.com/questions/6410730/css-endless-rotation-animation

@@ -67,6 +67,8 @@ const ResultsDisplay = ({ searchResults, isLoading, error }) => {
 
   if (isLoading) return <LoadingSpinner className='spinner rotating'/>;
 
+  if (error) return <p className='error'>{error}</p>;
+
   return (
     <section className='ResultsDisplay'>
       
