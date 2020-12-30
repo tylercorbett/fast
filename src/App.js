@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { isValidElement, useState } from 'react';
 import './reset.css';
 import './App.scss';
 import Search from './components/Search/Search';
+import Review from './components/Review/Review';
 import { FiSearch as SearchIcon } from 'react-icons/fi';
 import { GrCart as CartIcon } from 'react-icons/gr';
 
 const App = () => {
   const [selectedMovies, setSelectedMovies] = useState([]);
+  const [isReviewVisible, setIsReviewVisible] = useState(false);
+
+  const toggleIsReviewVisible = () => {
+    setIsReviewVisible(!isReviewVisible);
+  };
 
   const updateSelectedMovies = newMovie => {
     let newMovies = [...selectedMovies];
@@ -27,7 +33,9 @@ const App = () => {
           Fast Movie Search
         </h1>
       </header>
-      <Navigation />
+      <Navigation 
+        toggleIsReviewVisible={toggleIsReviewVisible}
+      />
       <Search 
         updateSelectedMovies={updateSelectedMovies}
         selectedMovies={selectedMovies}
@@ -39,15 +47,19 @@ const App = () => {
 
 export default App;
 
-const Navigation = () => {
+const Navigation = ({ toggleIsReviewVisible }) => {
   return (
     <nav className='Navigation'>
       <ul>
         <li>
-          <SearchIcon />
+          <button>
+            <SearchIcon />
+          </button>
         </li>
         <li>
-          <CartIcon />
+          <button onClick={toggleIsReviewVisible}>
+            <CartIcon />
+          </button>
         </li>
       </ul>
     </nav>
