@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Search.scss';
+import { getApiKey } from '../../utils/helpers';
 
 const Search = () => {
   const [movieName, setMovieName] = useState('');
@@ -7,9 +8,10 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // TODO: Move this into it's own file
   const handleSearchClicked = async () => {
     setIsLoading(true);
-    const res = await fetch(`http://www.omdbapi.com/?apikey=93675976&s=${movieName}`);
+    const res = await fetch(`http://www.omdbapi.com/?apikey=${getApiKey()}&s=${movieName}`);
     console.log(res, 'res');
 
     // Make sure base network request is working fine
@@ -48,8 +50,19 @@ const Search = () => {
       >
         Search
       </button>
+      <ResultsDisplay 
+        searchResults={searchResults}
+      />
     </section>
   );
 };
 
 export default Search;
+
+const ResultsDisplay = ({ searchResults }) => {
+  return (
+    <section className='ResultsDisplay'>
+      
+    </section>
+  );
+};
