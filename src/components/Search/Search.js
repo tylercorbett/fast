@@ -23,6 +23,7 @@ const Search = () => {
       // Make sure there's actually movies with your search
       if (json.Response !== "False") {
         setSearchResults(json.Search);
+        setError(null);
       }
       else {
         setError(json.Error);
@@ -65,7 +66,7 @@ export default Search;
 const ResultsDisplay = ({ searchResults, isLoading, error }) => {
 
   if (isLoading) return <LoadingSpinner className='spinner rotating'/>;
-  
+
   return (
     <section className='ResultsDisplay'>
       
