@@ -1,5 +1,7 @@
 .Search {
   background: pink;
+  display: grid;
+  grid-template-rows: 12rem 1fr;
   
   h2 {
     text-align: center;
@@ -43,7 +45,7 @@
   }
 
   .ResultsDisplay {
-
+    background: coral;
   }
 }
 

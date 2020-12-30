@@ -10,7 +10,9 @@ const Search = () => {
   const [error, setError] = useState(null);
 
   // TODO: Move this into it's own file
-  const handleSearchClicked = async () => {
+  const handleSearchClicked = async e => {
+    e.preventDefault();
+    
     setIsLoading(true);
     const res = await fetch(`http://www.omdbapi.com/?apikey=${getApiKey()}&s=${movieName}`);
     console.log(res, 'res');
@@ -40,18 +42,21 @@ const Search = () => {
   
   return (
     <section className='Search'>
-      <h2>Search by movie or series title</h2>
-      <input 
-        type='text'
-        placeholder='Harry Potter'
-        onChange={e => setMovieName(e.target.value)}
-        maxLength={40}
-      />
-      <button
-        onClick={handleSearchClicked}
-      >
-        Search
-      </button>
+      <form>
+        <h2>Search by movie or series title</h2>
+        <input 
+          type='text'
+          placeholder='Harry Potter'
+          onChange={e => setMovieName(e.target.value)}
+          maxLength={40}
+        />
+        <button
+          onClick={e => handleSearchClicked(e)}
+          type='submit'
+        >
+          Search
+        </button>
+      </form>
       <ResultsDisplay 
         searchResults={searchResults}
         isLoading={isLoading}
