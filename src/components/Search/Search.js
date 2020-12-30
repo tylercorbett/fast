@@ -3,7 +3,7 @@ import './Search.scss';
 import { getApiKey } from '../../utils/helpers';
 import { AiOutlineLoading3Quarters as LoadingSpinner } from 'react-icons/ai';
 
-const Search = ({ updateSelectedMovies }) => {
+const Search = ({ updateSelectedMovies, selectedMovies }) => {
   const [movieName, setMovieName] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +13,8 @@ const Search = ({ updateSelectedMovies }) => {
     const { Title } = result;
 
     updateSelectedMovies(Title);
-  }
+  };
+
 
   // TODO: Move this into it's own file
   const handleSearchClicked = async e => {
@@ -63,6 +64,7 @@ const Search = ({ updateSelectedMovies }) => {
         isLoading={isLoading}
         error={error}
         handleResultClick={handleResultClick}
+        selectedMovies={selectedMovies}
       />
     </section>
   );
@@ -71,7 +73,7 @@ const Search = ({ updateSelectedMovies }) => {
 export default Search;
 
 // TODO: Move ResultsDisplay and Result into their own file
-const ResultsDisplay = ({ searchResults, isLoading, error, handleResultClick }) => {
+const ResultsDisplay = ({ searchResults, isLoading, error, handleResultClick, selectedMovies }) => {
 
   if (isLoading) return <LoadingSpinner className='spinner rotating'/>;
 
@@ -80,15 +82,15 @@ const ResultsDisplay = ({ searchResults, isLoading, error, handleResultClick }) 
   return (
     <div className='ResultsDisplay'>
       <ul>
-        {searchResults.map(result => <Result handleResultClick={handleResultClick} key={result.imdbID} result={result}/>)}
+        {searchResults.map(result => <Result isActive={selectedMovies.includes(result.Title)} handleResultClick={handleResultClick} key={result.imdbID} result={result}/>)}
       </ul>
     </div>
   );
 };
 
-const Result = ({ result, handleResultClick }) => {
+const Result = ({ result, handleResultClick, isActive }) => {
   return (
-    <li className='Result' onClick={() => handleResultClick(result)}>
+    <li className={`Result${isActive ? ' active' : ''}`} onClick={() => handleResultClick(result)}>
       <img src={result.Poster} alt={`${result.Title} poster image`}/>
       <h3>{result.Title}</h3>
     </li>

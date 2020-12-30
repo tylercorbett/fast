@@ -30,6 +30,7 @@ const App = () => {
       <Navigation />
       <Search 
         updateSelectedMovies={updateSelectedMovies}
+        selectedMovies={selectedMovies}
       />
     </div>
   );
