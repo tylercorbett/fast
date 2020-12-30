@@ -1,5 +1,8 @@
 .App {
   font-family: Roboto, sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 2.5rem 1fr 3.5rem;
 
   header {
     padding: .2rem 0;
@@ -12,8 +15,6 @@
 }
 
 .Navigation {
-  position: fixed;
-  bottom: 0;
   width: 100vw;
   font-size: 1.9rem;
   font-weight: 300;
