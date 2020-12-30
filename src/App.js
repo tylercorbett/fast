@@ -4,7 +4,7 @@ import Search from './components/Search/Search';
 import { FiSearch as SearchIcon } from 'react-icons/fi';
 import { GrCart as CartIcon } from 'react-icons/gr';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header>
