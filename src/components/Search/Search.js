@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Search.scss';
 
 const Search = () => {
+  const [movieName, setMovieName] = useState('');
+  
   return (
     <section className='Search'>
-      <h2>i am a search component</h2>
+      <h2>Search by movie or series title</h2>
+      <input 
+        type='text'
+        placeholder='Harry Potter'
+        onChange={e => setMovieName(e.target.value)}
+      />
+
     </section>
   );
 };
