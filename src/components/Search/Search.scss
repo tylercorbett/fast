@@ -55,6 +55,10 @@
       justify-items: center;
       grid-gap: 1rem;
 
+      @media only screen and (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .Result {
         background: rgba(207, 207, 207, .5);
         border-bottom-left-radius: .5rem;
