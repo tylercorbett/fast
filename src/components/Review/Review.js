@@ -12,7 +12,7 @@ const Review = ({ selectedMovies, setIsReviewVisible, setSelectedMovies }) => {
       <div className='modal-overlay' onClick={() => setIsReviewVisible(false)}/>
       <section className='modal-body'>
         <h2>Confirm Order</h2>
-        <button onClick={confirmOrder}>Click to confirm</button>
+        <button disabled={selectedMovies.length === 0} onClick={confirmOrder}>Click to confirm</button>
         <ol>
           {selectedMovies.map((movie, i) => {
             return (
