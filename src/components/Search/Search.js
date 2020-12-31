@@ -22,12 +22,10 @@ const Search = ({ updateSelectedMovies, selectedMovies }) => {
 
     setIsLoading(true);
     const res = await fetch(`http://www.omdbapi.com/?apikey=${getApiKey()}&s=${movieName}`);
-    console.log(res, 'res');
 
     // Make sure base network request is working fine
     if (res.status === 200) {
       const json = await res.json();
-      console.log(json, 'json');
 
       // Make sure there's actually movies with your search
       if (json.Response !== "False") {
