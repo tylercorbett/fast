@@ -42,6 +42,14 @@
         color: white;
         cursor: pointer;
       }
+
+      &:disabled {
+        background: gray;
+        color: lightgray;
+        border-color: gray;
+        opacity: .2;
+        cursor: not-allowed;
+      }
     }
 
     ol {
