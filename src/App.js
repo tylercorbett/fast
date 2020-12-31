@@ -37,6 +37,11 @@ const App = () => {
         updateSelectedMovies={updateSelectedMovies}
         selectedMovies={selectedMovies}
       />
+     {isReviewVisible && 
+     <Review 
+        selectedMovies={selectedMovies}
+        setIsReviewVisible={setIsReviewVisible}
+      />}
     </div>
   );
 }
