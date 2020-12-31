@@ -21,7 +21,7 @@ const Search = ({ updateSelectedMovies, selectedMovies }) => {
     e.preventDefault();
 
     setIsLoading(true);
-    const res = await fetch(`http://www.omdbapi.com/?apikey=${getApiKey()}&s=${movieName}`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${getApiKey()}&s=${movieName}`);
 
     // Make sure base network request is working fine
     if (res.status === 200) {
