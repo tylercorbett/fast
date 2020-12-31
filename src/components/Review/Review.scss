@@ -4,7 +4,7 @@
   height: 100vh;
 
   .modal-body {
-    background: red;
+    background: rgb(212, 212, 212);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -13,14 +13,40 @@
     width: 90vw;
     animation: fade-in-body .2s ease-in;
     overflow: scroll;
-    
+
     h2 {
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
-      margin: 1rem 0;
+      margin-bottom: 1rem;
+      background: green;
+      padding: 1rem 0;
+      color: white;
+    }
+    
+    button {
+      display: block;
+      margin: 2rem auto;
+      width: auto;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      border: 2px outset green;
+      color: green;
+      background: none;
+      transition: all .2s ease-in-out;
+      padding: .2rem .8rem;
+  
+      &:hover, &:focus {
+        background: green;
+        color: white;
+        cursor: pointer;
+      }
     }
 
+    ol {
+      
+    }
   }
   
   .modal-overlay {

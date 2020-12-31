@@ -1,4 +1,4 @@
-import React, { isValidElement, useState } from 'react';
+import React, { useState } from 'react';
 import './reset.css';
 import './App.scss';
 import Search from './components/Search/Search';
@@ -41,6 +41,7 @@ const App = () => {
      <Review 
         selectedMovies={selectedMovies}
         setIsReviewVisible={setIsReviewVisible}
+        setSelectedMovies={setSelectedMovies}
       />}
     </div>
   );
