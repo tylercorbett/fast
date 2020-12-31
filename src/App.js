@@ -10,10 +10,6 @@ const App = () => {
   const [selectedMovies, setSelectedMovies] = useState([]);
   const [isReviewVisible, setIsReviewVisible] = useState(false);
 
-  const toggleIsReviewVisible = () => {
-    setIsReviewVisible(!isReviewVisible);
-  };
-
   const updateSelectedMovies = newMovie => {
     let newMovies = [...selectedMovies];
     
@@ -34,7 +30,8 @@ const App = () => {
         </h1>
       </header>
       <Navigation 
-        toggleIsReviewVisible={toggleIsReviewVisible}
+        setIsReviewVisible={setIsReviewVisible}
+        isReviewVisible={isReviewVisible}
       />
       <Search 
         updateSelectedMovies={updateSelectedMovies}
@@ -47,17 +44,17 @@ const App = () => {
 
 export default App;
 
-const Navigation = ({ toggleIsReviewVisible }) => {
+const Navigation = ({ setIsReviewVisible, isReviewVisible }) => {
   return (
     <nav className='Navigation'>
       <ul>
         <li>
-          <button>
+          <button onClick={() => setIsReviewVisible(false)} className={isReviewVisible ? '' : 'active'}>
             <SearchIcon />
           </button>
         </li>
         <li>
-          <button onClick={toggleIsReviewVisible}>
+          <button onClick={() => setIsReviewVisible(true)} className={isReviewVisible ? 'active' : ''}>
             <CartIcon />
           </button>
         </li>
