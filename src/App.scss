@@ -1,4 +1,18 @@
 .App {
   font-family: Roboto, sans-serif;
   min-height: 100vh;
+
+  .ending-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 100vw;
+    text-align: center;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
 }
