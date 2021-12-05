@@ -2,27 +2,6 @@ import React, { useState } from "react";
 import "./TinderSwipe.scss";
 import TinderCard from "react-tinder-card";
 
-// const TinderSwipe = () => {
-//   const onSwipe = (direction) => {
-//     console.log("You swiped: " + direction);
-//   };
-
-//   const onCardLeftScreen = (myIdentifier) => {
-//     console.log(myIdentifier + " left the screen");
-//   };
-//   return (
-//     <section className="TinderSwipe">
-//       <TinderCard
-//         onSwipe={onSwipe}
-//         onCardLeftScreen={() => onCardLeftScreen("fooBar")}
-//         preventSwipe={["right", "left"]}
-//       >
-//         Hello, World!
-//       </TinderCard>
-//     </section>
-//   );
-// };
-
 const db = [
   {
     name: "Richard Hendricks",
@@ -44,7 +23,7 @@ const db = [
 
 function TinderSwipe() {
   const characters = db;
-  const [lastDirection, setLastDirection] = useState();
+  const [, setLastDirection] = useState();
 
   const swiped = (direction, nameToDelete) => {
     console.log("removing: " + nameToDelete);
