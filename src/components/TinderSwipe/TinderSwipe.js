@@ -49,13 +49,10 @@ function TinderSwipe() {
   return (
     <div className="TinderSwipe">
       <div className="cardContainer">
-        {db.map((photo) => (
-          <TinderCard
-            className="swipe"
-            key={photo.name}
-          >
-            <div className="card">
-              <img src={photo.src} alt={photo.name}/>
+        {db.map((photo, i) => (
+          <TinderCard className="swipe" key={photo.name}>
+            <div className={`card ${i % 2 === 0 ? "rotate-left" : ""}`}>
+              <img src={photo.src} alt={photo.name} />
               <h3>{photo.name}</h3>
             </div>
           </TinderCard>
