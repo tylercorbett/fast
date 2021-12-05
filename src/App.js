@@ -1,13 +1,12 @@
 import React from "react";
 import "./reset.css";
 import "./App.scss";
+import TinderSwipe from "./components/TinderSwipe/TinderSwipe";
 
 const App = () => {
   return (
     <div className="App">
-      <header>
-        <h1>auto deploy go</h1>
-      </header>
+      <TinderSwipe />
     </div>
   );
 };

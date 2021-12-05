@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Search.scss';
-import { getApiKey } from '../../utils/helpers';
+import { getApiKey } from '../../../utils/helpers';
 import { AiOutlineLoading3Quarters as LoadingSpinner } from 'react-icons/ai';
 
 const Search = ({ updateSelectedMovies, selectedMovies }) => {
