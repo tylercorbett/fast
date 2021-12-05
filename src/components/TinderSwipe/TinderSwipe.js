@@ -4,6 +4,11 @@ import TinderCard from "react-tinder-card";
 
 const db = [
   {
+    name: "And more to come!",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638676652/skye%2Btyler/bxvnc3rxwz7ovwgd2b7d.jpg",
+    isVertical: true,
+  },
+  {
     name: "Offroading - July 31st 2021",
     src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669988/skye%2Btyler/offroading.gif",
     isVertical: true,

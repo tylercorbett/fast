@@ -7,10 +7,6 @@ const App = () => {
   return (
     <div className="App">
       <TinderSwipe />
-      <div className="ending-container">
-        <p>And many more! I love you!</p>
-        <button>Restart</button>
-      </div>
     </div>
   );
 };

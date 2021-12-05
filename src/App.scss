@@ -1,19 +1,6 @@
 .App {
   font-family: Roboto, sans-serif;
   min-height: 100vh;
+  overflow: hidden;
   background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
-
-  .ending-container {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 100vw;
-    text-align: center;
-
-    p {
-      font-size: 1.5rem;
-    }
-  }
 }
