@@ -26,7 +26,7 @@ const App = () => {
     <div className="App">
       <header>
         <h1>
-          Fast Movie Search
+          Fast Movie Search NEW NEW
         </h1>
       </header>
       <Navigation 
