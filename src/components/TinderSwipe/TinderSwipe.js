@@ -36,7 +36,6 @@ function TinderSwipe() {
 
   return (
     <div className="TinderSwipe">
-      <h1>React Tinder Card</h1>
       <div className="cardContainer">
         {characters.map((character) => (
           <TinderCard
