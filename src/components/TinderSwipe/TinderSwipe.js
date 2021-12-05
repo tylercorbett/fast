@@ -34,9 +34,17 @@ function TinderSwipe() {
     console.log(name + " left the screen!");
   };
 
+  const handleCardContainerClicked = () => {
+    console.log("clicked");
+  };
+
   return (
     <div className="TinderSwipe">
-      <div className="cardContainer">
+      <div
+        className="cardContainer"
+        onTouchStart={handleCardContainerClicked}
+        onClick={handleCardContainerClicked}
+      >
         {characters.map((character) => (
           <TinderCard
             className="swipe"
