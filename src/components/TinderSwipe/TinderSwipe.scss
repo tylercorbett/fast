@@ -3,11 +3,16 @@
   width: 100vw;
   position: relative;
   padding-top: 5.5rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
   .cardContainer {
     width: 90vw;
     height: 550px;
     position: absolute;
+    display: flex;
+    justify-content: center;
   }
 
   .card {
