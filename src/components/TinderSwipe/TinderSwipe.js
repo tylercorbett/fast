@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TinderSwipe.scss";
 import TinderCard from "react-tinder-card";
 
@@ -46,17 +46,6 @@ const db = [
 ];
 
 function TinderSwipe() {
-  const [, setLastDirection] = useState();
-
-  const swiped = (direction, nameToDelete) => {
-    console.log("removing: " + nameToDelete);
-    setLastDirection(direction);
-  };
-
-  const outOfFrame = (name) => {
-    console.log(name + " left the screen!");
-  };
-
   return (
     <div className="TinderSwipe">
       <div className="cardContainer">
@@ -64,8 +53,6 @@ function TinderSwipe() {
           <TinderCard
             className="swipe"
             key={photo.name}
-            onSwipe={(dir) => swiped(dir, photo.name)}
-            onCardLeftScreen={() => outOfFrame(photo.name)}
           >
             <div className="card">
               <img src={photo.src} />
