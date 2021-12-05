@@ -55,7 +55,7 @@ function TinderSwipe() {
             key={photo.name}
           >
             <div className="card">
-              <img src={photo.src} />
+              <img src={photo.src} alt={photo.name}/>
               <h3>{photo.name}</h3>
             </div>
           </TinderCard>
