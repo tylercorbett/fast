@@ -4,25 +4,40 @@ import TinderCard from "react-tinder-card";
 
 const db = [
   {
-    name: "Richard Hendricks",
-    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+    name: "Offroading",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669988/skye%2Btyler/offroading.gif",
   },
   {
-    name: "Richard fdafdasf",
-    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+    name: "Vegas pool party",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669988/skye%2Btyler/vegas-pool.gif",
   },
   {
-    name: "R3214ichard Hendricks",
-    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+    name: "Maya pool",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669986/skye%2Btyler/maya-pool.gif",
   },
   {
-    name: "Richard fdfd",
-    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+    name: "Vegas",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669983/skye%2Btyler/vegas.gif",
+  },
+  {
+    name: "Duck pond",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669982/skye%2Btyler/duck-pond.gif",
+  },
+  {
+    name: "Mansion party",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669978/skye%2Btyler/mansion.gif",
+  },
+  {
+    name: "Club",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669978/skye%2Btyler/club.gif",
+  },
+  {
+    name: "Heliopter ride",
+    src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638669976/skye%2Btyler/hellacopters.gif",
   },
 ];
 
 function TinderSwipe() {
-  const characters = db;
   const [, setLastDirection] = useState();
 
   const swiped = (direction, nameToDelete) => {
@@ -37,18 +52,16 @@ function TinderSwipe() {
   return (
     <div className="TinderSwipe">
       <div className="cardContainer">
-        {characters.map((character) => (
+        {db.map((photo) => (
           <TinderCard
             className="swipe"
-            key={character.name}
-            onSwipe={(dir) => swiped(dir, character.name)}
-            onCardLeftScreen={() => outOfFrame(character.name)}
+            key={photo.name}
+            onSwipe={(dir) => swiped(dir, photo.name)}
+            onCardLeftScreen={() => outOfFrame(photo.name)}
           >
-            <div
-              style={{ backgroundImage: "url(" + character.url + ")" }}
-              className="card"
-            >
-              <h3>{character.name}</h3>
+            <div className="card">
+              <img src={photo.src} />
+              <h3>{photo.name}</h3>
             </div>
           </TinderCard>
         ))}
