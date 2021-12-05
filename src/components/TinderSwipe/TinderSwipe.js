@@ -1,12 +1,82 @@
-import React from 'react';
-import './TinderSwipe.scss';
+import React, { useState } from "react";
+import "./TinderSwipe.scss";
+import TinderCard from "react-tinder-card";
 
-const TinderSwipe = () => {
+// const TinderSwipe = () => {
+//   const onSwipe = (direction) => {
+//     console.log("You swiped: " + direction);
+//   };
+
+//   const onCardLeftScreen = (myIdentifier) => {
+//     console.log(myIdentifier + " left the screen");
+//   };
+//   return (
+//     <section className="TinderSwipe">
+//       <TinderCard
+//         onSwipe={onSwipe}
+//         onCardLeftScreen={() => onCardLeftScreen("fooBar")}
+//         preventSwipe={["right", "left"]}
+//       >
+//         Hello, World!
+//       </TinderCard>
+//     </section>
+//   );
+// };
+
+const db = [
+  {
+    name: "Richard Hendricks",
+    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+  },
+  {
+    name: "Richard fdafdasf",
+    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+  },
+  {
+    name: "R3214ichard Hendricks",
+    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+  },
+  {
+    name: "Richard fdfd",
+    url: "https://media.npr.org/assets/img/2021/08/06/dog-4415649-18eab39206426b985f7a5f69e3146a2cd1a56c0d-s1600-c85.webp",
+  },
+];
+
+function TinderSwipe() {
+  const characters = db;
+  const [lastDirection, setLastDirection] = useState();
+
+  const swiped = (direction, nameToDelete) => {
+    console.log("removing: " + nameToDelete);
+    setLastDirection(direction);
+  };
+
+  const outOfFrame = (name) => {
+    console.log(name + " left the screen!");
+  };
+
   return (
-    <section className='TinderSwipe'>
-      Tinder swipe
-    </section>
+    <div className="TinderSwipe">
+      <h1>React Tinder Card</h1>
+      <div className="cardContainer">
+        {characters.map((character) => (
+          <TinderCard
+            className="swipe"
+            key={character.name}
+            onSwipe={(dir) => swiped(dir, character.name)}
+            onCardLeftScreen={() => outOfFrame(character.name)}
+          >
+            <div
+              style={{ backgroundImage: "url(" + character.url + ")" }}
+              className="card"
+            >
+              <h3>{character.name}</h3>
+            </div>
+          </TinderCard>
+        ))}
+      </div>
+    </div>
   );
-};
+}
 
 export default TinderSwipe;
