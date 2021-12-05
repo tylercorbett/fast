@@ -28,37 +28,6 @@
     }
   }
 
-  #root > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .app > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .row {
-    flex-direction: row !important;
-  }
-
-  .row > * {
-    margin: 5px;
-  }
-
-  h1 {
-    font-family: "Damion", cursive;
-    color: #fff;
-  }
-  
-  h2 {
-    color: #fff;
-  }
-  
   .swipe {
     position: absolute;
   }
