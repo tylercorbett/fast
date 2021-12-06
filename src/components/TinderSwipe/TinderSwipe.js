@@ -52,7 +52,7 @@ const db = [
     src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638678929/skye%2Btyler/compressed-golf-cart.gif",
   },
   {
-    name: "Bellagio - August 29th 2021",
+    name: "Vegas Round 2 - August 29th 2021",
     src: "https://res.cloudinary.com/dmtn5fbdu/image/upload/v1638678438/skye%2Btyler/sunglasses.gif",
   },
 ];
