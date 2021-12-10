@@ -1,0 +1,30 @@
+.Music {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  background: lightcoral;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  
+  button {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    
+    svg {
+      color: red;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .off {
+      opacity: .3;
+    }
+  }
+}
