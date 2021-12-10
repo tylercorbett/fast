@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./Music.scss";
-import { MdMusicNote as MusicNote } from "react-icons/md";
+// import { MdMusicNote as MusicNote } from "react-icons/md";
 
 const Music = () => {
   const [isPlaying, setIsPlaying] = useState(false);
