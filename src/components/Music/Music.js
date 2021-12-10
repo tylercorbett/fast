@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import "./Music.scss";
-import { MdMusicNote } from "react-icons/md";
 
 const Music = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,12 +16,16 @@ const Music = () => {
     }
   };
 
-  const MusicIcon = isPlaying ? <MdMusicNote /> : <MdMusicNote className="off" />;
-
   return (
     <div className="Music">
       <button onClick={toggleAudio}>
-        {MusicIcon}
+        <div 
+          className={`music-icon-overlay ${isPlaying ? "" : "off"}`}
+        />
+        <img 
+          src="https://res.cloudinary.com/dmtn5fbdu/image/upload/v1639107629/skye%2Btyler/transparent-bg-music-icon.png"
+          alt="music icon"
+        />
       </button>
       <audio ref={audioRef}>
         <source
