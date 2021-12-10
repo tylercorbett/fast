@@ -2,7 +2,7 @@
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  background: lightcoral;
+  background-image: linear-gradient(to right, rgb(241, 174, 197), rgb(244, 70, 128));
   border-radius: 50%;
 
   button {
@@ -21,7 +21,7 @@
     }
 
     .music-icon-overlay {
-      background: lightcoral;
+      background-image: linear-gradient(to right, rgb(241, 174, 197), rgb(244, 70, 128));
       opacity: .2;
       width: 100%;
       height: 100%;
