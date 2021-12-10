@@ -24,11 +24,10 @@
     }
 
     .off {
-      // opacity: 0.3;
-      color: blue;
+      opacity: .3;
     }
   }
   &:active {
-    bottom: 2.4rem;
+    bottom: 1.9rem;
   }
 }
